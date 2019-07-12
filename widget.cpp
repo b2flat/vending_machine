@@ -29,19 +29,23 @@ void Widget::changeMoney(int n){
         }
         else if(money >= 100 && money <= 140){
             ui->pbCoffee->setEnabled(true);
+            ui->pbTea->setEnabled(false);
+            ui->pbCola->setEnabled(false);
             break;
         }
-        else if(money >= 150 && money <= 200){
+        else if(money >= 150 && money <= 190){
             ui->pbCoffee->setEnabled(true);
             ui->pbTea->setEnabled(true);
+            ui->pbCola->setEnabled(false);
             break;
         }
-        else if(money > 200){
+        else if(money >= 200){
             ui->pbCoffee->setEnabled(true);
             ui->pbTea->setEnabled(true);
             ui->pbCola->setEnabled(true);
             break;
         }
+        break;
     }
 }
 
