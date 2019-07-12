@@ -16,14 +16,32 @@ Widget::~Widget()
 {
     delete ui;
 }
+
 void Widget::changeMoney(int n){
     money += n;
     ui->lcdNumber->display(QString::number(money));
-    ui->pbCoffee->setEnabled(true);
-    QMessageBox msg;
-
-    if(money < 0){
-       msg.information(nullptr, "Not Money", "I don't have Money, So Sad");
+    while(1){
+        if(money <= 90){
+            ui->pbCoffee->setEnabled(false);
+            ui->pbCola->setEnabled(false);
+            ui->pbTea->setEnabled(false);
+            break;
+        }
+        else if(money >= 100 && money <= 140){
+            ui->pbCoffee->setEnabled(true);
+            break;
+        }
+        else if(money >= 150 && money <= 200){
+            ui->pbCoffee->setEnabled(true);
+            ui->pbTea->setEnabled(true);
+            break;
+        }
+        else if(money > 200){
+            ui->pbCoffee->setEnabled(true);
+            ui->pbTea->setEnabled(true);
+            ui->pbCola->setEnabled(true);
+            break;
+        }
     }
 }
 
@@ -49,15 +67,33 @@ void Widget::on_pb500_clicked()
 
 void Widget::on_pbCoffee_clicked()
 {
-    changeMoney(-100);
+    QMessageBox msg;
+    if(money <= 90){
+        msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
+    }
+    else{
+        changeMoney(-100);
+        }
 }
 
 void Widget::on_pbTea_clicked()
 {
-    changeMoney(-150);
+    QMessageBox msg;
+    if(money <= 140){
+        msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
+    }
+    else{
+        changeMoney(-150);
+    }
 }
 
 void Widget::on_pbCola_clicked()
 {
-    changeMoney(-500);
+    QMessageBox msg;
+    if(money <= 190){
+        msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
+    }
+    else{
+        changeMoney(-200);
+    }
 }

@@ -9,6 +9,5 @@ int main(int argc, char *argv[])
 
     Widget w2;
     w2.show(); //ja pan gi two gae
-
     return a.exec();
 }
