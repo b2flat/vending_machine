@@ -32,6 +32,8 @@ private slots:
 
     void on_pbCola_clicked();
 
+    void on_pbRefund_clicked();
+
 private:
     Ui::Widget *ui;
 };

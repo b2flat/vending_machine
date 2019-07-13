@@ -78,8 +78,8 @@
   <widget class="QPushButton" name="pbTea">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>180</y>
+     <x>300</x>
+     <y>190</y>
      <width>88</width>
      <height>27</height>
     </rect>
@@ -91,8 +91,8 @@
   <widget class="QPushButton" name="pbCoffee">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>140</y>
+     <x>300</x>
+     <y>150</y>
      <width>88</width>
      <height>27</height>
     </rect>
@@ -104,14 +104,27 @@
   <widget class="QPushButton" name="pbCola">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>220</y>
+     <x>300</x>
+     <y>230</y>
      <width>88</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text">
     <string>Cola(200)</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbRefund">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>190</y>
+     <width>88</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Refund</string>
    </property>
   </widget>
  </widget>

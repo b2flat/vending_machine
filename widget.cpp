@@ -101,3 +101,35 @@ void Widget::on_pbCola_clicked()
         changeMoney(-200);
     }
 }
+
+void Widget::on_pbRefund_clicked()
+{
+    int w = 0;
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    while(1){
+        if(money >= 500){
+            changeMoney(-500);
+            w++;
+        }
+        else if(money >= 100){
+            changeMoney(-100);
+            x++;
+        }
+        else if(money > 40 && money <= 90){
+            changeMoney(-50);
+            y++;
+        }
+        else if(money <= 40 && money > 0){
+            changeMoney(-10);
+            z++;
+        }
+        else if(money == 0){
+            QMessageBox msg;
+            msg.information(nullptr, "Thank you", "500won   " + QString::number(w) + "\n" + "100won   " + QString::number(x)
+                            + "\n" + "50won   " + QString::number(y) + "\n" + "10won   " + QString::number(z));
+            break;
+        }
+    }
+}
