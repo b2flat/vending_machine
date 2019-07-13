@@ -20,6 +20,7 @@ Widget::~Widget()
 void Widget::changeMoney(int n){
     money += n;
     ui->lcdNumber->display(QString::number(money));
+    //vending machine algorithm
     while(1){
         if(money <= 90){
             ui->pbCoffee->setEnabled(false);
@@ -51,26 +52,27 @@ void Widget::changeMoney(int n){
 
 void Widget::on_pb10_clicked()
 {
-    changeMoney(10);
+    changeMoney(10); //+10won
 }
 
 void Widget::on_pb50_clicked()
 {
-    changeMoney(50);
+    changeMoney(50); //+50won
 }
 
 void Widget::on_pb100_clicked()
 {
-    changeMoney(100);
+    changeMoney(100); //+100won
 }
 
 void Widget::on_pb500_clicked()
 {
-    changeMoney(500);
+    changeMoney(500); //+500won
 }
 
 void Widget::on_pbCoffee_clicked()
 {
+    //if you push Coffee button, -100won
     QMessageBox msg;
     if(money <= 90){
         msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
@@ -82,6 +84,7 @@ void Widget::on_pbCoffee_clicked()
 
 void Widget::on_pbTea_clicked()
 {
+    //if you push Tea button, -150won
     QMessageBox msg;
     if(money <= 140){
         msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
@@ -93,6 +96,7 @@ void Widget::on_pbTea_clicked()
 
 void Widget::on_pbCola_clicked()
 {
+    //if you push Cola button, -200won
     QMessageBox msg;
     if(money <= 190){
         msg.information(nullptr, "Not Money", "You don't have Money, Please insert coin!");
@@ -104,6 +108,7 @@ void Widget::on_pbCola_clicked()
 
 void Widget::on_pbRefund_clicked()
 {
+    //Refund algorithm
     int w = 0;
     int x = 0;
     int y = 0;
@@ -126,6 +131,7 @@ void Widget::on_pbRefund_clicked()
             z++;
         }
         else if(money == 0){
+            //This MessageBox show refund money
             QMessageBox msg;
             msg.information(nullptr, "Thank you", "500won   " + QString::number(w) + "\n" + "100won   " + QString::number(x)
                             + "\n" + "50won   " + QString::number(y) + "\n" + "10won   " + QString::number(z));

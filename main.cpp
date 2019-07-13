@@ -5,9 +5,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Widget w;
-    w.show();
+    w.show(); //first vending machine
 
     Widget w2;
-    w2.show(); //ja pan gi two gae
+    w2.show(); //second vending machine
     return a.exec();
 }
